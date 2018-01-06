@@ -12,29 +12,61 @@
   <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <script>
-    // Page init event
-    document.addEventListener('init', function(event) {
-      var page = event.target;
-
-      if (page.matches('#first-page')) {
-
-        page.querySelector('#push-button').onclick = function() {
-          document.querySelector('#navigator').pushPage('page2.html');
-        };
-
-      } else if (page.matches('#second-page')) {
-
-        page.querySelector('#pop-button').onclick = function() {
-          document.querySelector('#navigator').popPage();
-        };
-
-      }
-    });
-  </script>
+  <script src="scripts/app.js"></script>
 </head>
 <body>
-  <ons-navigator id="navigator" page="page1.html"></ons-navigator>
+  <ons-navigator id="navigator" page="menu.html"></ons-navigator>
+
+  <!-- メインメニュー -->
+  <ons-template id="menu.html">
+    <ons-page id="menu" modifier="background">
+      <!-- ツールバー -->
+      <ons-toolbar modifier="toolbar">
+        <div class="left">
+          <ons-back-button>戻る</ons-back-button>
+        </div>
+        <div class="center">メニュー</div>
+        <div class="right">
+          <ons-icon icon="fa-qrcode" class="toolbarIcon"></ons-icon>
+        </div>
+      </ons-toolbar>
+      
+      <!-- メニュー -->
+      <ons-list modifier="menu">
+        <ons-list-item>
+          <ons-button modifier="large" onclick="myPushPage('book.html')">
+            <ons-icon icon="fa-book" fixed-width="true" class="menuIcon"></ons-icon>
+            動物図鑑
+          </ons-button>
+        </ons-list-item>
+        <ons-list-item>
+          <ons-button modifier="large" onclick="myPushPage('map.html')">
+          <ons-icon icon="fa-map-marker" fixed-width="true" class="menuIcon"></ons-icon>
+            園内マップ
+          </ons-button>
+        </ons-list-item>
+        <ons-list-item>
+          <ons-button modifier="large" onclick="myPushPage('map.html')">
+          <ons-icon icon="fa-home" fixed-width="true" class="menuIcon"></ons-icon>
+            動物園ホームページ
+          </ons-button>
+        </ons-list-item>
+        <ons-list-item>
+          <ons-button modifier="large" onclick="myPushPage('map.html')">
+          <ons-icon icon="fa-commenting-o" fixed-width="true" class="menuIcon"></ons-icon>
+            飼育員ブログ
+          </ons-button>
+        </ons-list-item>
+        <ons-list-item>
+          <ons-button modifier="large" onclick="myPushPage('map.html')">
+          <ons-icon icon="fa-info-circle" fixed-width="true" class="menuIcon"></ons-icon>
+            ヘルプ
+          </ons-button>
+        </ons-list-item>
+        
+      </ons-list>
+    </ons-page>
+  </ons-template>
 
   <ons-template id="page1.html">
     <ons-page id="first-page">
@@ -45,6 +77,7 @@
       <div class="content" style="text-align: center">
         <p>This is the first page.</p>
         <ons-button id="push-button">Push page</ons-button>
+        <ons-button onclick="myPushPage('page2.html')">hello</ons-button>
       </div>
     </ons-page>
   </ons-template>
