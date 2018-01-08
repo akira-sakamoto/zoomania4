@@ -125,6 +125,14 @@
     },
 
     /**
+     * ヘルプ
+     */
+    help: function() {
+      console.log('_pageList.help <<');
+      console.log('_pageList.help >>');
+    },
+
+    /**
      * QRコードスキャン
      */
     qrscan: function() {
