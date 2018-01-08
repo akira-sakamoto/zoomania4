@@ -129,6 +129,41 @@
      */
     qrscan: function() {
       console.log('_pageList.qrscan <<');
+      $('#qrScanButton').click(function() {
+        scanBarcode();
+        return false;
+      });
+
+      /**
+       * スキャンボタン押下時
+       */
+      function scanBarcode() {
+        if (window.plugins === undefined) {
+          // エラーメッセージ
+          $('#qrResultMessage').text('QRコードスキャナは使えません');
+        } else {
+          window.plugins.barcodeScanner.scan(function(result) {
+            // successコールバック
+            if (result.cancelled) {
+              // キャンセルされたらなにもしない
+              return;
+            }
+            
+            // 結果テキストを表示する
+            $('#qrResultMessage').text(result.text);
+  
+            // URLならばブラウザでひらくボタンを表示する
+            if (result.text.indexOf('http') === 0) {
+              $('#qrBrowserOpenButton').show();
+            } else {
+              $('#qrBrowserOpenButton').hide();
+            }
+          }, function(error) {
+            // エラーコールバック
+            $('#qrResultMessage').text(error);
+          });
+        }
+      };
       console.log('_pageList.qrscan <<');
     }
 

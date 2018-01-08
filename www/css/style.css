@@ -57,3 +57,16 @@
 #detail div p.jpName {
     font-size: 24px;
 }
+
+/* QRscan */
+.qrBody {
+    font-size: 90%;
+    text-align: center;
+    color: #222;
+    padding: 10px;
+}
+#qrResultMessage {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #CCC;
+}

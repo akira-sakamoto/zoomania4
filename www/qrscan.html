@@ -8,7 +8,10 @@
     </ons-toolbar>
     
     <!-- 本体だよ -->
-    <ons-button id="scanButton">読み取り</ons-button>
-    <div class="result"></div>
+    <div class="qrBody">
+        <ons-button id="qrScanButton" modifier="large">読み取り</ons-button>
+        <div class="qrResultMesage" id="qrResultMessage">ここに結果が表示されます</div>
+        <ons-button id="qrBrowserOpenButton" modifier="large" style="display:none">URLをブラウザで開く</ons-button>
+    </div>
 </ons-page>
       
