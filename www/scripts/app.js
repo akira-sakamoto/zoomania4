@@ -123,7 +123,15 @@
       }
       console.log('_pageList.map >>');
     },
-    
+
+    /**
+     * ヘルプ
+     */
+    help: function() {
+      console.log('_pageList.help <<');
+      console.log('_pageList.help >>');
+    },
+
     /**
      * QRコードスキャン
      */

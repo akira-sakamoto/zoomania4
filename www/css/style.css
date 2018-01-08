@@ -51,11 +51,14 @@
 
 /* detail */
 #detail div p {
+<<<<<<< HEAD
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
 #detail div p.jpName {
   font-size: 24px;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 /* QRscan */
